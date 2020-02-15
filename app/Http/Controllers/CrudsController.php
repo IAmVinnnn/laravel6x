@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Faker\Generator;
 
-class CurdsController extends Controller
+class CrudsController extends Controller
 {
     public function create(Generator $faker)
     {
-      $crud = new Crud();
-      $crud->name = $faker->lexify('????????');
-      $crud->color = $faker->boolean ? 'red' : 'green';
-      $crud->save();
-    
-      return response($crud->jsonSerialize(), Response::HTTP_CREATED);
+        $crud = new Crud();
+        $crud->name = $faker->lexify('????????');
+        $crud->color = $faker->boolean ? 'red' : 'green';
+        $crud->save();
+
+        return response($crud->jsonSerialize(), Response::HTTP_CREATED);
     }
 
     public function index()
